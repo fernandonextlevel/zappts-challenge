@@ -1,0 +1,35 @@
+<div class="login">
+    <div class="login__brand font-brand">Invision</div>
+    <form [@AnimTrigger]="Animate" [formGroup]="loginForm" (ngSubmit)="submitLoginForm()" class="login__form">
+        <div class="form__title font-title">Welcome to Invision</div>
+        <div class="form__input--wrapper">
+            <div class="form__input__title font-content__smaller">Username or Email</div>
+            <input type="text" formControlName="username" class="form__input form-control"
+                [ngClass]="{ 'is-invalid': isFormSubmitted && formControls.username.errors }" />
+            <div *ngIf="isFormSubmitted && formControls.username.errors?.required"
+                class="font-content__smaller form__input__invalid-msg">*This field cannot be empty</div>
+        </div>
+        <div class="form__input--wrapper">
+            <div class="form__input__title font-content__smaller">Password</div>
+            <input type="password" formControlName="password" class="form__input form-control"
+                [ngClass]="{ 'is-invalid': isFormSubmitted && formControls.password.errors }" />
+            <div *ngIf="isFormSubmitted && formControls.password.errors?.required"
+                class="font-content__smaller form__input__invalid-msg">*This field cannot be empty</div>
+        </div>
+        <div class="login__forgot-password font-content__smaller">Forgot password?</div>
+        <button type="submit" class="form__button font-form__button">Sign in</button>
+    </form>
+    <div class="login__option__line">
+        <span class="font-content__smaller">Or</span>
+    </div>
+    <div class="login__google">
+        <button (click)="loginWithGoogle()" class="google__button font-google__button">
+            <img src="../../../assets/images/home-signup-googlelogo.svg">
+            Sign in with Google
+        </button>
+    </div>
+    <div class="login__go-to-login">
+        <div class="font-content__smaller">New to<strong class="font-content__smaller"> Invision? </strong><span
+                class="font-hyperlink" (click)="navigateAway()">Create Account</span></div>
+    </div>
+</div>

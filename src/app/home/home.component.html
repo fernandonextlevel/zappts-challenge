@@ -1,0 +1,5 @@
+<section class="home-container">
+    <app-carousel></app-carousel>
+    <app-login *ngIf='currentComponent === "login"' (goTo)="swapComponents($event)"></app-login>
+    <app-signup *ngIf='currentComponent === "signup"' (goTo)="swapComponents($event)"></app-signup>
+</section>

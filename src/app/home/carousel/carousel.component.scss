@@ -1,0 +1,29 @@
+.carousel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+    background: var(--brandColor);
+        
+    .carousel__controls {
+
+        .carousel__controls__button {
+            cursor: pointer;
+            display: inline-block;
+            height: 12px;
+            width: 12px;
+            margin: 0 10px;
+            border-radius: 50%;
+            background: var(--white);
+            opacity: .5;
+            transition: all 1s;
+
+            &.is-expanded {
+                width: 26px;
+                border-radius: 50px;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+/*  Descrição: Grid System
+    Mixin: container
+    Variáveis: level, columns, rows
+    Propriedades: display, grid-template-columns, grid-template-rows
+    Mixin: content
+    Variables: layer, posX, posY, sizeX, sizeY
+    Properties: z-index, grid-column: posX / sizeX grid-row: posY / sizeY */
+
+@import "../../assets/mixins/grid.scss";
+
+.home-container {
+    @include container(grid, 50% 50%, 100vh);
+
+    app-carousel, app-login-form {
+        overflow: hidden;
+    }
+        
+    app-carousel {
+        @include content(1, 1, 1, 1, 1);
+    }
+        
+    app-login-form {
+        @include content(1, 2, 1, 1, 1);
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .home-container {
+        @include container(grid, 30% 70%, 100vh);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .home-container {
+        @include container(grid, 100%, 100vh);
+    }
+
+    app-carousel {
+        display: none;
+    }
+        
+    app-login-form {
+        @include content(1, 1, 1, 1, 1);
+    }    
+
+}
+        

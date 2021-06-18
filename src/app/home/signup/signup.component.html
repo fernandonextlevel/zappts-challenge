@@ -1,0 +1,55 @@
+<div class="signup">
+    <div class="signup__brand font-brand">Invision</div>
+    <form [@AnimTrigger]="Animate" [formGroup]="signupForm" (ngSubmit)="submitSignupForm()" class="signup__form">
+        <div class="form__title font-title">Getting Started</div>
+        <div class="form__input--wrapper">
+            <div class="form__input__title font-content__smaller">Full Name</div>
+            <input type="text" formControlName="fullname" class="form__input form-control"
+                [ngClass]="{ 'is-invalid': isFormSubmitted && formControls.fullname.errors }" />
+            <div *ngIf="isFormSubmitted && formControls.fullname.errors?.required"
+                class="font-content__smaller form__input__invalid-msg">*This field cannot be empty</div>
+        </div>
+
+        <div class="form__input--wrapper">
+            <div class="form__input__title font-content__smaller">Username or Email</div>
+            <input type="text" formControlName="username" class="form__input form-control"
+                [ngClass]="{ 'is-invalid': isFormSubmitted && formControls.username.errors }" />
+            <div *ngIf="isFormSubmitted && formControls.username.errors?.required"
+                class="font-content__smaller form__input__invalid-msg">*This field cannot be empty</div>
+        </div>
+        <div class="form__input--wrapper">
+            <div class="form__input__title font-content__smaller">Password</div>
+            <input type="password" formControlName="password" class="form__input form-control"
+                [ngClass]="{ 'is-invalid': isFormSubmitted && formControls.password.errors }" />
+            <div *ngIf="isFormSubmitted && formControls.password.errors?.required"
+                class="font-content__smaller form__input__invalid-msg">*This field cannot be empty</div>
+        </div>
+        <div class="form__input--wrapper">
+            <div class="form__input__title font-content__smaller">Confirm Password</div>
+            <input type="text" formControlName="confirmPassword" class="form__input form-control"
+                [ngClass]="{ 'is-invalid': isFormSubmitted && formControls.confirmPassword.errors }" />
+            <div *ngIf="isFormSubmitted && formControls.confirmPassword.errors?.required"
+                class="font-content__smaller form__input__invalid-msg">*This field cannot be empty</div>
+        </div>
+        <button type="submit" (click)="submitSignupForm()" class="form__button font-form__button">Sign up</button>
+    </form>
+    <div class="signup__option__line">
+        <span class="font-content__smaller">Or</span>
+    </div>
+    <div class="signup__google">
+        <button (click)="signupWithGoogle()" class="google__button font-google__button">
+            <img src="../../../assets/images/home-signup-googlelogo.svg">
+            Sign up with Google
+        </button>
+    </div>
+    <div class="signup__tos">
+        <div class="font-content__smaller">By signing up, you agree to <strong
+                class="font-content__smaller">Invision</strong></div>
+        <div class="font-content__smaller"><span class="font-hyperlink">Terms of Conditions</span> and <span
+                class="font-hyperlink">Privacy Policy</span></div>
+    </div>
+    <div class="signup__go-to-login">
+        <div class="font-content__smaller">Already on<strong class="font-content__smaller"> Invision? </strong><span
+                class="font-hyperlink" (click)="navigateAway()">Log in</span></div>
+    </div>
+</div>

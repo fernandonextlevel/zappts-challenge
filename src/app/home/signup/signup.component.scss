@@ -1,0 +1,101 @@
+.signup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	max-height: 100vh;
+	padding: 110px 120px 40px 120px;
+    overflow-y: auto;
+
+    .signup__brand, .signup__option__line, .signup__google, .signup__tos, .signup__go-to-login {
+        width: 100%;
+    }
+    
+    .signup__option__line, .signup__google, .signup__tos {
+        margin-top: 20px;
+    }
+
+    .signup__go-to-login {
+        margin-top: 20px;
+    }
+    
+    .signup__brand {
+        text-align: right;
+    }
+    
+    .signup__form {
+        width: 430px;
+        margin-top: 50px;
+
+        .form__title {
+            margin-bottom: 50px;
+            color: var(--gray);
+        }
+
+        .form__input--wrapper {
+            margin: 0 0 20px 0;
+
+            .form__input__title {
+                text-align: left;
+                color: var(--gray);
+            }
+
+            .form__input {
+                width: 100%;
+                padding-left: 20px;
+                line-height: 42px;
+                border-bottom: 1px solid var(--gray);
+
+                &.is-invalid {
+                    border-bottom: 1px solid var(--errorColor);
+                }
+            }
+
+            .form__input__invalid-msg {
+                text-align: right;
+                color: var(--errorColor);
+            }
+        }
+
+        .form__button {
+            width: 175px;
+            height: 45px;
+            margin-top: 20px;
+            border-radius: 100px;
+            background: var(--gray);
+            color: var(--white);
+        }
+    }
+
+    .signup__option__line {
+        user-select: none;
+        width: 370px;
+        background: var(--white);
+        background: linear-gradient(0deg, var(--white) 0%, var(--white) 46%, var(--gray) 50%, var(--white) 53%, var(--white) 100%);
+
+        span {
+            padding: 0 20px;
+            background: var(--white);
+            color: var(--gray);
+        }
+    }
+
+    .signup__google {
+        display: flex;
+        justify-content: center;
+
+        .google__button {
+            display: flex;
+            align-items: center;
+            padding: 10px 25px;
+            background: var(--white);
+            box-shadow: 0px 3px 6px var(--lightGray);
+            border-radius: 100px;
+
+            img {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+

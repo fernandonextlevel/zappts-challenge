@@ -1,0 +1,17 @@
+<div class="carousel">
+    <ng-container #content></ng-container>
+    <div class="carousel__controls">
+        <span (click)="clickSlide(slides[0])" [ngClass]="{ 'is-expanded': currentSlide === 'slideone' }"
+            class="carousel__controls__button">
+        </span>
+        <span (click)="clickSlide(slides[1])" [ngClass]="{ 'is-expanded': currentSlide === 'slidetwo' }"
+            class="carousel__controls__button">
+        </span>
+        <span (click)="clickSlide(slides[2])" [ngClass]="{ 'is-expanded': currentSlide === 'slidethree' }"
+            class="carousel__controls__button">
+        </span>
+        <span (click)="clickSlide(slides[3])" [ngClass]="{ 'is-expanded': currentSlide === 'slidefour' }"
+            class="carousel__controls__button">
+        </span>
+    </div>
+</div>
